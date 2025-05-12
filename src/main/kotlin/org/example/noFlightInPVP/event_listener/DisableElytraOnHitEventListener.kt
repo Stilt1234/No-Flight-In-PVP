@@ -2,6 +2,7 @@ package org.example.noFlightInPVP.event_listener
 
 import io.papermc.paper.event.player.PrePlayerAttackEntityEvent
 import net.kyori.adventure.text.Component.text
+import net.kyori.adventure.text.format.NamedTextColor
 import net.kyori.adventure.text.format.NamedTextColor.WHITE
 import net.kyori.adventure.text.format.TextColor.color
 import org.bukkit.Material
@@ -41,9 +42,14 @@ class DisableElytraOnHitEventListener : Listener {
             }
 
             hitPlayer.setCooldown(Material.ELYTRA, 60 * NoFlightInPVP.getTickRate().toInt())
-            hitPlayer.sendMessage(
-                text().content("Entered PVP, your Elytra has been disabled for ").color(color(1f, 0f, 0f))
-                    .append(text("60 seconds", WHITE)).build())
+
+            if(hitPlayer.inventory.contains(Material.ELYTRA) || (hitPlayer.inventory.chestplate != null && hitPlayer.inventory.chestplate!!.type.equals(Material.ELYTRA)))
+            {
+                hitPlayer.sendMessage(
+                    text().content("Entered PVP, your Elytra has been disabled for ").color(color(1f, 0f, 0f))
+                        .append(text("60 seconds", WHITE)).build()
+                )
+            }
 
             val keyHitPlayer = NamespacedKey(NoFlightInPVP.getPluginInstance(), "timer_enabled")
             hitPlayer.persistentDataContainer.set(keyHitPlayer, PersistentDataType.BOOLEAN, true)
@@ -59,7 +65,13 @@ class DisableElytraOnHitEventListener : Listener {
                     repeat(60)
                     {
                         hitPlayer.isGliding = false
-                        hitPlayer.sendActionBar(text().content("Time left before Elytra is enabled : $timeHitPlayer seconds").build())
+                        if(hitPlayer.inventory.contains(Material.ELYTRA) || (hitPlayer.inventory.chestplate != null && hitPlayer.inventory.chestplate!!.type.equals(Material.ELYTRA)))
+                        {
+                            hitPlayer.sendActionBar(
+                                text().content("Elytra will be enabled in : ").color(color(1f, 0f, 0f)).append(text("${timeHitPlayer}s",
+                                    NamedTextColor.GREEN)).build()
+                            )
+                        }
                         timeHitPlayer -= 1
                         Thread.sleep(1000)
                     }
@@ -68,9 +80,13 @@ class DisableElytraOnHitEventListener : Listener {
                     NoFlightInPVP.getPluginInstance().logger.info("Hit Player PDC changed : ${hitPlayer.persistentDataContainer.get(keyHitPlayer,
                         PersistentDataType.BOOLEAN)}")
 
-                    hitPlayer.sendActionBar(text().content("Elytra Enabled").build())
-                    hitPlayer.sendMessage(text().content("Your Elytra has been enabled.").color(color(0f, 1f, 0f)).build())
-
+                    if(hitPlayer.inventory.contains(Material.ELYTRA) || (hitPlayer.inventory.chestplate != null && hitPlayer.inventory.chestplate!!.type.equals(Material.ELYTRA)))
+                    {
+                        hitPlayer.sendActionBar(text().content("Elytra Enabled").color(color(0f, 1f, 0f)).build())
+                        hitPlayer.sendMessage(
+                            text().content("Your Elytra has been enabled.").color(color(0f, 1f, 0f)).build()
+                        )
+                    }
                     NoFlightInPVP.timerMap.remove(hitPlayer.displayName().toString())
                 }
             )
@@ -79,10 +95,14 @@ class DisableElytraOnHitEventListener : Listener {
             threadHitPlayer.start()
 
             event.player.setCooldown(Material.ELYTRA, 60 * NoFlightInPVP.getTickRate().toInt())
-            event.player.sendMessage(
-                text().content("Entered PVP, your Elytra has been disabled for ").color(color(1f, 0f, 0f))
-                    .append(text("60 seconds", WHITE)).build()
-            )
+
+            if(event.player.inventory.contains(Material.ELYTRA) || (event.player.inventory.chestplate != null && event.player.inventory.chestplate!!.type.equals(Material.ELYTRA)))
+            {
+                event.player.sendMessage(
+                    text().content("Entered PVP, your Elytra has been disabled for ").color(color(1f, 0f, 0f))
+                        .append(text("60 seconds", WHITE)).build()
+                )
+            }
 
             val keyEventPlayer = NamespacedKey(NoFlightInPVP.getPluginInstance(), "timer_enabled")
             event.player.persistentDataContainer.set(keyEventPlayer, PersistentDataType.BOOLEAN, true)
@@ -99,7 +119,13 @@ class DisableElytraOnHitEventListener : Listener {
                     repeat(60)
                     {
                         event.player.isGliding = false
-                        event.player.sendActionBar(text().content("Time left before Elytra is enabled : $timeEventPlayer seconds").build())
+                        if(event.player.inventory.contains(Material.ELYTRA) || (event.player.inventory.chestplate != null && event.player.inventory.chestplate!!.type.equals(Material.ELYTRA)))
+                        {
+                            event.player.sendActionBar(
+                                text().content("Elytra will be enabled in : ").color(color(1f, 0f, 0f)).append(text("${timeEventPlayer}s",
+                                    NamedTextColor.GREEN)).build()
+                            )
+                        }
                         timeEventPlayer -= 1
                         Thread.sleep(1000)
                     }
@@ -108,9 +134,13 @@ class DisableElytraOnHitEventListener : Listener {
                     NoFlightInPVP.getPluginInstance().logger.info("Event Player PDC changed : ${event.player.persistentDataContainer.get(keyEventPlayer,
                         PersistentDataType.BOOLEAN)}")
 
-                    event.player.sendActionBar(text().content("Elytra Enabled").build())
-                    event.player.sendMessage(text().content("Your Elytra has been enabled.").color(color(0f, 1f, 0f)).build())
-
+                    if(event.player.inventory.contains(Material.ELYTRA) || (event.player.inventory.chestplate != null && event.player.inventory.chestplate!!.type.equals(Material.ELYTRA)))
+                    {
+                        event.player.sendActionBar(text().content("Elytra Enabled").color(color(0f, 1f, 0f)).build())
+                        event.player.sendMessage(
+                            text().content("Your Elytra has been enabled.").color(color(0f, 1f, 0f)).build()
+                        )
+                    }
                     NoFlightInPVP.timerMap.remove(event.player.displayName().toString())
                 }
             )
