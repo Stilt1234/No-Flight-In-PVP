@@ -11,3 +11,6 @@ When an elytra is equipped after getting hit by a player, it is removed and an a
 * Prevent Elytra combat log - ✅
 * Compatibility with 1.21.x - ✅
 * Frustate runners - 100x ✅
+
+# Credits :
+Huge thanks to HunterLeviathan for giving me the idea and helping with the images.
