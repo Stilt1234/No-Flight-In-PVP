@@ -1,11 +1,11 @@
-package org.example.noFlightInPVP.event_listener
+package org.stilt34.noFlightInPVP.event_listener
 
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityToggleGlideEvent
-import org.example.noFlightInPVP.NoFlightInPVP
+import org.stilt34.noFlightInPVP.NoFlightInPVP
 
 class DisableElytraGlidingOnPlayerHitEventListener : Listener
 {

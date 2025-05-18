@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.stilt34-and-leviathan.totka-smp"
-version = "2.0"
+version = "${project.properties["VERSION"] as? String}"
 
 repositories {
     mavenCentral()
@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+    implementation("com.jeff-media:MorePersistentDataTypes:2.4.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
