@@ -55,5 +55,11 @@ When an Elytra is equipped or Trident is equipped in main hand or off hand after
 * Either Join our [Discord Server](https://discord.gg/t73k2GNG) and report the issue in the forum channel.
 * Or report it by [creating a new github issue.](https://github.com/Stilt1234/No-Flight-In-PVP/issues)
 
+# Some Terms and Conditions of use:
+By downloading the plugin you are automatically agreeing to my Terms and Conditions of use.
+<br> I am okay if anyone forks my plugins repositories and add's their own modifications, but it should be according to the license I have attached (Apache License 2.0).
+<br> If you are demonstrating/showing off this plugin in a video you have to give credit to me by putting my username (Stilt34) and this plugin link (https://modrinth.com/plugin/no-flight-in-pvp/) in the description of the video.
+<br> <u> **Note : The above Terms and Conditions are my copyright statements. NOT FOLLOWING THEM WILL RESULT IN LEGAL ACTION.** </u>
+
 # Credits :
 Huge thanks to HunterLeviathan for giving me the idea and helping with the images.
