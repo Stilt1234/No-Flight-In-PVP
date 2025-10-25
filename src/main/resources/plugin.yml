@@ -1,6 +1,6 @@
 name: No-Flight-In-PVP
-version: 'v3.0'
+version: '4.0'
 main: org.stilt34.noFlightInPVP.NoFlightInPVP
 api-version: '1.21'
 authors: [ Stilt34, Leviathan ]
-description: Disables a players Elytra for a minute when they get hit by another player (PVP).
+description: Disables a players Elytra and Trident for a specified amount of time when they get hit by another player (PVP).

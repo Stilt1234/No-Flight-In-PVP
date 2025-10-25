@@ -1,0 +1,6 @@
+# NOTE: All timers are in seconds. Time less than or equal to 0 will disable the timer.
+# NOTE: ONLY INTEGER/NUMBERS ARE ALLOWED, ANYTHING ELSE (such as "s" after the number) THEN DEFAULT VALUES WILL BE USED (i.e. 60 for hit_timer and 90 for combat_log_timer)
+hit_timer: 60
+combat_log_timer: 90
+allow_elytra_flight: false
+allow_trident_riptide: false
