@@ -26,8 +26,7 @@ class DisableElytraAndTridentTimerOnPlayerLeaveEventListener : Listener {
             val keyEventPlayer = NamespacedKey(NoFlightInPVP.Companion.getPluginInstance(), "timer_enabled")
             event.player.persistentDataContainer.set(keyEventPlayer, PersistentDataType.BOOLEAN, true)
 
-            NoFlightInPVP.Companion.getPluginInstance().logger.info("Event Player PDC added : ${event.player.persistentDataContainer.get(keyEventPlayer,
-                                                                                                                                         PersistentDataType.BOOLEAN)}")
+            NoFlightInPVP.Companion.getPluginInstance().logger.info("${event.player.name} has logged out during PVP. Either Elytra/Elytra's or Trident/Trident's has been taken.")
         }
     }
 

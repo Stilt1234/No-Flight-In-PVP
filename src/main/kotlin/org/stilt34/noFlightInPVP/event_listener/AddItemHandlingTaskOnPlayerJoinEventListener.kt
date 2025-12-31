@@ -9,12 +9,13 @@ import org.bukkit.enchantments.Enchantment
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
+import org.bukkit.inventory.ItemStack
 import org.bukkit.persistence.PersistentDataType
 import org.stilt34.noFlightInPVP.NoFlightInPVP
 import org.stilt34.noFlightInPVP.NoFlightInPVP.Companion.getPluginInstance
 
 @Suppress("ReplaceCallWithBinaryOperator")
-class AddItemRemovingTaskOnPlayerJoinEventListener : Listener
+class AddItemHandlingTaskOnPlayerJoinEventListener : Listener
 {
     @EventHandler
     fun onPlayerJoin(event : PlayerJoinEvent)
@@ -103,7 +104,7 @@ class AddItemRemovingTaskOnPlayerJoinEventListener : Listener
                     if((player.inventory.itemInOffHand.type.equals(Material.TRIDENT)
                         && player.inventory.itemInOffHand.enchantments.contains(Enchantment.RIPTIDE)))
                     {
-                        player.inventory.remove(player.inventory.itemInOffHand)
+                        player.inventory.setItemInOffHand(ItemStack(Material.AIR))
                     }
                 }
 

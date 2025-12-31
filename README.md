@@ -1,9 +1,16 @@
 # No Flight In PVP
-[![Modrinth](https://img.shields.io/badge/dynamic/json?labelColor=black&color=grey&label=&query=title&url=https://api.modrinth.com/v2/project/GJZRngyV&style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJPUExURQAAABvZahWnUha1WAYzGQlHIxvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZav///9ScwmYAAADDdFJOUwAAAAAAAA8zW3uOYwIBK3rB6Pn+ml18KiGL5HEDquOIH07R/UzKz2zu+uLHIibtafWkVCMNBRqg7/RQuT8EQbvT+5ETDBSU/NAgCSdZlcQKii7mtxJY5fF/7D1SRkB+EcWh4UilOOtPMdTCR1PqN969vmGDCw7G4DSSsAcGHrSPr3bds5CEwDKoXumcZdwcG4KmjayX32A79pjOqRjIFoXynVYVgPi6qxDnL78p2obVJFquNbGZCPdyvHPZ1yhuh8s+iRzcsrEAAAABYktHRMQUDBvhAAAAB3RJTUUH5wQXDwgZWDUtiQAAAqRJREFUOMttU/k7lFEU/k4L4hsxtNAnhRgiJZOiSfbI2oJpmRFCi2kV0aaNVLTIEpVISmnf97r/WO+534yZnqfzw73vOe+559xz7rmKIoVYvLx95vj6qUSqVBW3sGrwnxsQaAwSwcDz5i9g0wxPfmFIqJCyiEgLE4vDl7iD8PGlETotIqOQahlAdJTLA5sWY5JsbNzysHiihEBWViRqRDOlgyFmJVtMq5JWJ5vhvyZlLevrEmUILKl8PihtvYWcYt6QLmNwFjjEb4SSkZnlZLO5yJzcPBg35bODwZfPZxYwWbC5sKjYzwBUkssxSg1wKNsCtHUb89vTy3GwopBxDmcJ9YdDJYB1B9t2WmUtcbtkqt18Mxsp9irsezS2VEu+uka/mqUWSrFd2VsnhLEetoZ9TFv3HwCexdUdjBWi0aH4YTuEvtoPM3/EO1nnuTpEjD2qHIM54DhR0wmA5hZySzIntyknsbZyi8IB0tp07tRpBDKfgeWsdDjHDlFGRIjnl3O0t573gcMFUBeVS1gvlxB1dOZxv0pIu9IF01UDZRdjr1SuZQhxvbvnRrmsMePmrdsrGPRaKP8OLtmn9KM7A4N3xb8yNExUb5RlZt2btpZbXajzPoYkBaDKrtADp3HkYdloo56ndgx37UcHxSP0tIWBGH9cg1nx6TJFTNhS7eCfcA1PJ+GgDbLDs2GuX3V05Ohj0xYSBGumyq/yfApw4EWTRxPJqxQvIF6+ks9Gr0d4nN+8Nbhoi+NdJEwVSc6hVNvHOUvg+5qeDxoP3GQz6x8/qXLuZ6Op7SPy+gNTnydSELabk1Z8Mbs/hlr4dbobfUgxJMS3UdXza9H33jqnA3/OH41FCZ7/l7HW8vOXiWc9GvPf06D953/T2O/EP8HBNtcH0Zm/lqFNUgTAex4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDQtMjNUMTU6MDg6MjQrMDA6MDAE5dOaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA0LTIzVDE1OjA4OjI0KzAwOjAwdbhrJgAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wNC0yM1QxNTowODoyNSswMDowMITaQU0AAAAASUVORK5CYII=)](https://modrinth.com/plugin/no-flight-in-pvp)
-[![Modrinth](https://img.shields.io/badge/dynamic/json?label=Available%20for%201.21.x&color=4bab62&query=version&url=https://api.blueish.dev/api/minecraft/version?id=GJZRngyV)](https://modrinth.com/plugin/no-flight-in-pvp)
 ### Disables a players Elytra and Trident for a specified amount of time when they get hit by another player (PVP).
 
 ![No Flight In PVP](https://cdn.modrinth.com/data/cached_images/7b6d1a03c17161fd80b08042995e0e48e8f30495.webp)
+
+[![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/plugin/no-flight-in-pvp)
+[![discord-singular](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-singular_vector.svg)](https://discord.gg/hnG9hkmJDr)
+[![paper](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/paper_vector.svg)](https://modrinth.com/plugin/no-flight-in-pvp/versions?loader=paper#download)
+[![purpur](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/purpur_vector.svg)](https://modrinth.com/plugin/no-flight-in-pvp/versions?loader=purpur#download)
+
+# Thank you all for 1000 downloads!!!
+## We've reached our goal of getting a 1000 downloads before the end of 2025! We thank you for your support. Wishing you all a very Happy and Prosporous New Year from the NFIP development team 🥳❤️
+
 
 # How the timer works :
 When an Elytra is equipped or Trident is equipped in main hand or off hand after getting hit by a player, it/both is/are removed and an action bar will tell you the time left before you can equip your Elytra or Trident. Once the timer ends, you can use your Elytra and Trident freely. But, if you combat log i.e. logout during a fight, then the timer will be increased as punishment (Well... ideally it should be increased but it depends how server owner's configure it).
@@ -12,13 +19,15 @@ When an Elytra is equipped or Trident is equipped in main hand or off hand after
 # Features :
 * Disable Elytra during PVP - ✅
 * Prevent Elytra combat log - ✅
+* Disable Trident Riptide during PVP - ✅
+* Prevent Trident Riptide log - ✅
 * Configuration options using config file and commands - ✅
 * Compatibility with 1.21.x - ✅
 * Frustate runners - 100x ✅
 
 # Commands in-depth :
 <details>
-  
+
   <summary> Click me to reveal this section! </summary>
   <h3> Commands : </h3>
      <br>/nfip_config : opens the help menu.
@@ -52,7 +61,7 @@ When an Elytra is equipped or Trident is equipped in main hand or off hand after
 </details>
 
 # Found any bug?
-* Either Join our [Discord Server](https://discord.gg/t73k2GNG) and report the issue in the forum channel.
+* Either Join our [Discord Server](https://discord.gg/hnG9hkmJDr) and report the issue in the forum channel.
 * Or report it by [creating a new github issue.](https://github.com/Stilt1234/No-Flight-In-PVP/issues)
 
 # Some Terms and Conditions of use:

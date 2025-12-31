@@ -16,8 +16,8 @@ import net.kyori.adventure.text.serializer.json.JSONComponentSerializer
 import org.bukkit.NamespacedKey
 import org.bukkit.entity.Player
 import org.bukkit.persistence.PersistentDataType
-import org.stilt34.noFlightInPVP.event_listener.AddItemRemovingTaskOnPlayerJoinEventListener
-import org.stilt34.noFlightInPVP.event_listener.CancelItemRemovingTaskOnPlayerLeaveEventListener
+import org.stilt34.noFlightInPVP.event_listener.AddItemHandlingTaskOnPlayerJoinEventListener
+import org.stilt34.noFlightInPVP.event_listener.CancelItemHandlingTaskOnPlayerLeaveEventListener
 import org.stilt34.noFlightInPVP.event_listener.DisableElytraAndTridentOnPlayerHitEventListener
 import org.stilt34.noFlightInPVP.event_listener.DisableElytraAndTridentOnPlayerJoinEventListener
 import org.stilt34.noFlightInPVP.event_listener.DisableElytraAndTridentTimerOnPlayerLeaveEventListener
@@ -90,7 +90,7 @@ class NoFlightInPVP : org.bukkit.plugin.java.JavaPlugin() {
         // Change plugin instance to the loaded instance
         pluginInstance = this
 
-        logger.info("${"$pluginName v4.0"} has been enabled.")
+        logger.info("${"$pluginName v5.0"} has been enabled.")
 
         // Saving Config if it doesn't exist
         saveDefaultConfig()
@@ -610,8 +610,8 @@ class NoFlightInPVP : org.bukkit.plugin.java.JavaPlugin() {
         server.pluginManager.registerEvents(DisableElytraAndTridentOnPlayerHitEventListener(), this)
         server.pluginManager.registerEvents(DisableElytraAndTridentOnPlayerJoinEventListener(), this)
         server.pluginManager.registerEvents(DisableElytraAndTridentTimerOnPlayerLeaveEventListener(), this)
-        server.pluginManager.registerEvents(AddItemRemovingTaskOnPlayerJoinEventListener(), this)
-        server.pluginManager.registerEvents(CancelItemRemovingTaskOnPlayerLeaveEventListener(), this)
+        server.pluginManager.registerEvents(AddItemHandlingTaskOnPlayerJoinEventListener(), this)
+        server.pluginManager.registerEvents(CancelItemHandlingTaskOnPlayerLeaveEventListener(), this)
 
         // Done loading, sending message.
         logger.info("$pluginName loading complete.")

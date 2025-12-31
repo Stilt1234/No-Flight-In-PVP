@@ -5,7 +5,7 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerQuitEvent
 import org.stilt34.noFlightInPVP.NoFlightInPVP
 
-class CancelItemRemovingTaskOnPlayerLeaveEventListener : Listener
+class CancelItemHandlingTaskOnPlayerLeaveEventListener : Listener
 {
     @EventHandler
     fun onPLayerLeave(event : PlayerQuitEvent)

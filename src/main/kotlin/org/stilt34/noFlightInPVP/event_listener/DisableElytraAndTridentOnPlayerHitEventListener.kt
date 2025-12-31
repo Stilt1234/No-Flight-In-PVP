@@ -11,6 +11,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
+import org.bukkit.inventory.ItemStack
 import org.bukkit.persistence.PersistentDataType
 import org.stilt34.noFlightInPVP.NoFlightInPVP
 import org.stilt34.noFlightInPVP.NoFlightInPVP.Companion.getPluginInstance
@@ -22,11 +23,11 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
     @EventHandler(priority = EventPriority.HIGH)
     fun onPlayerHit (event : PrePlayerAttackEntityEvent)
     {
-        if (NoFlightInPVP.getElytraFlightAllowed() == true)
+        if (NoFlightInPVP.getElytraFlightAllowed() == true && NoFlightInPVP.getTridentRiptideAllowed() == true)
         {
             return
         }
-
+        if(NoFlightInPVP.getHitTimer() <= 0) { return }
         if(event.attacked !is Player || !(event.willAttack()))
         {
             return
@@ -58,7 +59,6 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
             }
 
             hitPlayer.setCooldown(Material.ELYTRA, NoFlightInPVP.getHitTimer() * NoFlightInPVP.getTickRate().toInt())
-            hitPlayer.setCooldown(Material.TRIDENT, NoFlightInPVP.getHitTimer() * NoFlightInPVP.getTickRate().toInt())
 
             val keyHitPlayer = NamespacedKey(getPluginInstance(), "timer_enabled")
             hitPlayer.persistentDataContainer.set(keyHitPlayer, PersistentDataType.BOOLEAN, true)
@@ -80,10 +80,10 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
 
                         repeat(NoFlightInPVP.getCombatLogTimer())
                         {
-                            var showTimerText =
+                            var h_showTimerText =
                                     hitPlayer.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
 
-                            var actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
+                            var h_actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
                                 hitPlayer.persistentDataContainer.get(
                                     keyActionBarColour,
                                     PersistentDataType.STRING
@@ -95,10 +95,10 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                                 hitPlayer.isGliding = false
                                 if ((hitPlayer.inventory.contains(Material.ELYTRA) || (hitPlayer.inventory.chestplate != null && hitPlayer.inventory.chestplate!!.type.equals(
                                         Material.ELYTRA
-                                    ))) && showTimerText == true)
+                                    ))) && h_showTimerText == true)
                                 {
                                     hitPlayer.sendActionBar(
-                                        text().content("${timeHitPlayer}s").color(actionBarColour).build()
+                                        text().content("${timeHitPlayer}s").color(h_actionBarColour).build()
                                     )
                                 }
                                 if (timeHitPlayer == NoFlightInPVP.getHitTimer())
@@ -127,10 +127,10 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
 
                         repeat(NoFlightInPVP.getHitTimer())
                         {
-                            var showTimerText =
+                            var h_showTimerText =
                                     hitPlayer.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
 
-                            var actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
+                            var h_actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
                                 hitPlayer.persistentDataContainer.get(
                                     keyActionBarColour,
                                     PersistentDataType.STRING
@@ -148,10 +148,10 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                                         hitPlayerTridentListKey,
                                         DataType.asList(DataType.ITEM_STACK)
                                     ) != null)
-                                    && showTimerText == true)
+                                    && h_showTimerText == true)
                                 {
                                     hitPlayer.sendActionBar(
-                                        text().content("${timeHitPlayer}s").color(actionBarColour).build()
+                                        text().content("${timeHitPlayer}s").color(h_actionBarColour).build()
                                     )
                                 }
                                 if (timeHitPlayer == NoFlightInPVP.getHitTimer())
@@ -177,12 +177,12 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
 
                     if(Thread.currentThread().isInterrupted == false)
                     {
-                        var showText =
+                        var h_showText =
                                 hitPlayer.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
 
-                        var actionBarText =
+                        var h_actionBarText =
                                 hitPlayer.persistentDataContainer.get(keyActionBarText, PersistentDataType.STRING)!!
-                        var actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
+                        var h_actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
                             hitPlayer.persistentDataContainer.get(
                                 keyActionBarColour,
                                 PersistentDataType.STRING
@@ -195,9 +195,9 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                              || hitPlayer.persistentDataContainer.get(
                                 hitPlayerTridentListKey, DataType.asList(DataType.ITEM_STACK)
                             ) != null)
-                            && showText == true)
+                            && h_showText == true)
                         {
-                            hitPlayer.sendActionBar(text().content(actionBarText).color(actionBarColour).build())
+                            hitPlayer.sendActionBar(text().content(h_actionBarText).color(h_actionBarColour).build())
                         }
                         hitPlayer.persistentDataContainer.set(keyHitPlayer, PersistentDataType.BOOLEAN, false)
                         NoFlightInPVP.timerMap.remove(hitPlayer.displayName().toString())
@@ -259,7 +259,7 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                 if ((hitPlayer.inventory.itemInOffHand.type.equals(Material.TRIDENT)
                      && hitPlayer.inventory.itemInOffHand.enchantments.contains(Enchantment.RIPTIDE)))
                 {
-                    hitPlayer.inventory.remove(hitPlayer.inventory.itemInOffHand)
+                    hitPlayer.inventory.setItemInOffHand(ItemStack(Material.AIR))
                 }
             }
             threadHitPlayer.start()
@@ -268,10 +268,6 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
 
             // Attacking Player Code
             event.player.setCooldown(Material.ELYTRA, NoFlightInPVP.getHitTimer() * NoFlightInPVP.getTickRate().toInt())
-            event.player.setCooldown(
-                Material.TRIDENT,
-                NoFlightInPVP.getHitTimer() * NoFlightInPVP.getTickRate().toInt()
-            )
 
             val keyEventPlayer = NamespacedKey(getPluginInstance(), "timer_enabled")
             event.player.persistentDataContainer.set(keyEventPlayer, PersistentDataType.BOOLEAN, true)
@@ -292,10 +288,10 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                         repeat(NoFlightInPVP.getCombatLogTimer())
                         {
                             var showTimerText =
-                                    hitPlayer.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
+                                    event.player.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
 
                             var actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
-                                hitPlayer.persistentDataContainer.get(
+                                event.player.persistentDataContainer.get(
                                     keyActionBarColour,
                                     PersistentDataType.STRING
                                 )!!
@@ -339,10 +335,10 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                         repeat(NoFlightInPVP.getHitTimer())
                         {
                             var showTimerText =
-                                    hitPlayer.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
+                                    event.player.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
 
                             var actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
-                                hitPlayer.persistentDataContainer.get(
+                                event.player.persistentDataContainer.get(
                                     keyActionBarColour,
                                     PersistentDataType.STRING
                                 )!!
@@ -388,12 +384,12 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                     if(Thread.currentThread().isInterrupted == false)
                     {
                         var showText =
-                                hitPlayer.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
+                                event.player.persistentDataContainer.get(keyShowTimerText, PersistentDataType.BOOLEAN)
 
                         var actionBarText =
-                                hitPlayer.persistentDataContainer.get(keyActionBarText, PersistentDataType.STRING)!!
+                                event.player.persistentDataContainer.get(keyActionBarText, PersistentDataType.STRING)!!
                         var actionBarColour = NoFlightInPVPUtils.pdc_string_to_text_color_parser(
-                            hitPlayer.persistentDataContainer.get(
+                            event.player.persistentDataContainer.get(
                                 keyActionBarColour,
                                 PersistentDataType.STRING
                             )!!
@@ -471,7 +467,7 @@ class DisableElytraAndTridentOnPlayerHitEventListener : Listener
                 if ((event.player.inventory.itemInOffHand.type.equals(Material.TRIDENT)
                      && event.player.inventory.itemInOffHand.enchantments.contains(Enchantment.RIPTIDE)))
                 {
-                    event.player.inventory.remove(event.player.inventory.itemInOffHand)
+                    event.player.inventory.setItemInOffHand(ItemStack(Material.AIR))
                 }
             }
             threadEventPlayer.start()

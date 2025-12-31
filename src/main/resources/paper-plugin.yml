@@ -1,5 +1,5 @@
 name: No-Flight-In-PVP
-version: '4.0'
+version: '5.0'
 main: org.stilt34.noFlightInPVP.NoFlightInPVP
 api-version: '1.21'
 authors: [ Stilt34, Leviathan ]
